@@ -1,7 +1,4 @@
-/* Responsive, modernized styling for Todo app
-   — Cleaner layout, better spacing, mobile‑first
-   — Added media queries for tablets & desktops
-   — Softer colors, shadows, and improved accessibility */
+
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
@@ -25,9 +22,6 @@ body {
   background: linear-gradient(180deg, #eef2ff 0%, #f9fbff 100%);
   color: var(--text);
 }
-
-/* ---------- Layout Wrappers ---------- */
-
 .todos-bg-container {
   min-height: 100vh;
   display: flex;
@@ -42,9 +36,6 @@ body {
   margin: auto;
   padding: 16px;
 }
-
-/* Card wrapper to visually group content */
-
 .todo-card {
   background: var(--card);
   border-radius: 16px;
@@ -52,9 +43,6 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.06);
   padding: 20px;
 }
-
-/* ---------- Headings ---------- */
-
 .todos-heading {
   text-align: center;
   font-size: 42px;
@@ -74,8 +62,6 @@ body {
   color: var(--primary);
   font-weight: 500;
 }
-
-/* ---------- Form ---------- */
 
 .todo-user-input {
   width: 100%;
@@ -140,9 +126,6 @@ body {
   transform: translateY(0);
   box-shadow: none;
 }
-
-/* ---------- Todo List ---------- */
-
 .todo-items-container {
   margin: 0;
   padding: 0;
@@ -204,17 +187,12 @@ body {
   color: var(--subtle);
 }
 
-/* ---------- Spacing between Add & Save ---------- */
-
 .actions-row {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
-/* ---------- Media Queries ---------- */
-
-/* Small phones */
 @media (max-width: 480px) {
   .todos-heading {
     font-size: 32px;
@@ -239,7 +217,6 @@ body {
   }
 }
 
-/* Tablets and small laptops */
 @media (min-width: 768px) {
   .todos-bg-container {
     padding-top: 40px;
@@ -259,7 +236,6 @@ body {
   }
 }
 
-/* Desktop enhancements */
 @media (min-width: 1024px) {
   .todo-card {
     border-radius: 18px;
@@ -269,4 +245,5 @@ body {
     gap: 14px;
   }
 }
+
 
