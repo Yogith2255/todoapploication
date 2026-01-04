@@ -37,8 +37,10 @@ body {
 }
 
 .container {
+  max-width: 600px;
   width: 100%;
-  max-width: 760px;
+  margin: auto;
+  padding: 16px;
 }
 
 /* Card wrapper to visually group content */
@@ -224,6 +226,17 @@ body {
   .todo-card {
     padding: 16px;
   }
+    body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  button, input {
+    font-size: 16px;
+  }
 }
 
 /* Tablets and small laptops */
@@ -256,3 +269,4 @@ body {
     gap: 14px;
   }
 }
+
