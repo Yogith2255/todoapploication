@@ -15,10 +15,6 @@ function getTodoListFromLocalStorage() {
 let todoList = getTodoListFromLocalStorage();
 let todosCount = todoList.length;
 
-saveTodoButton.onclick = function() {
-  localStorage.setItem("todoList", JSON.stringify(todoList));
-  showToast("Todos Saved");
-};
 
 
 function onAddTodo() {
@@ -40,8 +36,10 @@ function onAddTodo() {
   todoList.push(newTodo);
   createAndAppendTodo(newTodo);
   userInputElement.value = "";
+  localStorage.setItem("todoList", JSON.stringify(todoList));
   showToast("Task Added");
-  showSaveReminder();
+  
+  
 
 }
 
@@ -68,22 +66,22 @@ function onTodoStatusChange(checkboxId, labelId, todoId) {
 
   if(todoObject.isChecked === true){
     todoObject.isChecked = false;
+    localStorage.setItem("todoList", JSON.stringify(todoList));
   } else {
     todoObject.isChecked = true;
+    localStorage.setItem("todoList", JSON.stringify(todoList));
   }
   if (todoObject.isChecked) {
   showToast("Task Completed");
 } else {
   showToast("Task Reopened");
 }
-
-
 }
 
 function onDeleteTodo(todoId) {
   let todoElement = document.getElementById(todoId);
   todoItemsContainer.removeChild(todoElement);
-
+  
   let deleteElementIndex = todoList.findIndex(function(eachTodo) {
     let eachTodoId = "todo" + eachTodo.uniqueNo;
     if (eachTodoId === todoId) {
@@ -91,11 +89,12 @@ function onDeleteTodo(todoId) {
     } else {
       return false;
     }
+    
   });
 
   todoList.splice(deleteElementIndex, 1);
+  localStorage.setItem("todoList", JSON.stringify(todoList));
   showToast("Task Deleted");
-  showSaveReminder();
 
 }
 
@@ -161,7 +160,5 @@ function showToast(message) {
     toast.classList.remove("show");
   }, 1800);
 }
-function showSaveReminder() {
-  showToast("Changes are temporary — click Save to store permanently");
-}
+
 
