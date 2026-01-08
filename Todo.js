@@ -20,6 +20,7 @@ let todosCount = todoList.length;
 function onAddTodo() {
   let userInputElement = document.getElementById("todoUserInput");
   let userInputValue = userInputElement.value;
+  
 
   if (userInputValue === "") {
     alert("Enter Valid Text");
@@ -38,14 +39,17 @@ function onAddTodo() {
   userInputElement.value = "";
   localStorage.setItem("todoList", JSON.stringify(todoList));
   showToast("Task Added");
-  
-  
-
 }
 
 addTodoButton.onclick = function() {
   onAddTodo();
 };
+let userInputElement = document.getElementById("todoUserInput");
+document.addEventListener("keydown",function(event){
+    if(event.key=="Enter"){
+      onAddTodo();
+    }
+  });
 
 function onTodoStatusChange(checkboxId, labelId, todoId) {
   let checkboxElement = document.getElementById(checkboxId);
